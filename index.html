@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="sript.js" type="text/js"></script>
     <title>Calculadora</title>
 
     <style>
-        body {
-            background-color: cadetblue;
-        }  
+        
+        body{
+            background-color: #777a7aa7;
+            font-family: 'Roboto Mono', monospace;
+            
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+
+        button{
+            display: flex;
+            flex-direction: column;
+            
+        }
     </style>
 
 </head>
@@ -17,23 +37,45 @@
 
     <h1>Calculadora</h1>
 
-    <form>
-        <input id="num1" type="text"></input>
-        <input id="num2" type="text"></input>
-        <button type="button" onclick="somar()">Somar</button>
-        <input id="soma" type="text" disabled></input>
-    </form>
+    <div class="flex-container">
+            <form>
+            <input id="num1" type="text">
+            <input id="num2" type="text">
+            <button type="button" onclick="operacao('+')">Somar</button>
+            <button type="button" onclick="operacao('-')">Subtrair</button>
+            <button type="button" onclick="operacao('*')">Multiplicar</button>
+            <button type="button" onclick="operacao('/')">Dividir</button>
+            <input type="text" disabled id="resultado"/> 
+            </form>
+    </div>
 
     <script>
-        function somar(){
-           var num1, num2, soma;
-            num1 = parseFloat(document.getElementById("num1").value);
-            num2 = parseFloat(document.getElementById("num2").value);
+        function operacao(op){
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var resultado = document.getElementById("resultado")
+            var resultado_conta;
 
-            soma = num1 + num2;
+            switch (op) {
+                case "+":
+                resultado_conta = num1 + num2;
+                    break;
+                
+                case "-":
+                resultado_conta = num1 - num2;
+                    break;
+                
+                case "*":
+                resultado_conta = num1 * num2;
+                    break;
 
-            document.getElementById("soma").value = soma;
+                case "/":
+                resultado_conta = num1 / num2;
+                    break;
+            }
+            resultado.value = resultado_conta;
         }
+            
     </script>
 
 
