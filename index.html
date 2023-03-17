@@ -11,25 +11,51 @@
     <style>
         
         body{
-            background-color: #777a7aa7;
+            height: 1000px;
+            background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.904), black);
             font-family: 'Roboto Mono', monospace;
             
         }
+        
+        input[type=text] {
+        width: 100%;
+        padding: 10px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        background-color: rgb(32, 32, 32);
+        color: rgb(255, 255, 255);
+        }
+
+        button{
+            background-color: #00000048;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button:hover {opacity: 1}
 
         .flex-container {
             display: flex;
             justify-content: center;
         }
         h1{
+            color: white;
             display: flex;
             justify-content: center;
         }
 
-        button{
-            display: flex;
-            flex-direction: column;
-            
-        }
+       
+
     </style>
 
 </head>
@@ -39,13 +65,13 @@
 
     <div class="flex-container">
             <form>
-            <input id="num1" type="text">
-            <input id="num2" type="text">
+            <input id="num1" type="text" placeholder="Insira um número">
+            <input id="num2" type="text" placeholder="Insira outro número">
             <button type="button" onclick="operacao('+')">Somar</button>
             <button type="button" onclick="operacao('-')">Subtrair</button>
             <button type="button" onclick="operacao('*')">Multiplicar</button>
             <button type="button" onclick="operacao('/')">Dividir</button>
-            <input type="text" disabled id="resultado"/> 
+            <input type="text" disabled id="resultado"></input>
             </form>
     </div>
 
